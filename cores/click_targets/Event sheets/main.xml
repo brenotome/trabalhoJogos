@@ -3,13 +3,15 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>main</name>
     <events>
+        <variable constant="0" name="minY" sid="262521763901982" static="0" type="number">30</variable>
+        <variable constant="0" name="minX" sid="416428739670908" static="0" type="number">30</variable>
         <variable constant="0" name="restart" sid="205770767230884" static="0" type="number">0</variable>
         <variable constant="0" name="win" sid="211222660564417" static="0" type="number">0</variable>
-        <variable constant="0" name="timer" sid="752752667025500" static="0" type="number">5</variable>
+        <variable constant="0" name="timer" sid="752752667025500" static="0" type="number">10</variable>
         <variable constant="0" name="hits" sid="783885710820872" static="0" type="number">0</variable>
-        <variable comment="tamanho do layout" constant="0" name="maxY" sid="639285714510150" static="0" type="number">500</variable>
-        <variable comment="tamanho do layout" constant="0" name="maxX" sid="936471472286207" static="0" type="number">500</variable>
-        <variable constant="0" name="maxtargets" sid="710142285905661" static="0" type="number">10</variable>
+        <variable comment="tamanho do layout" constant="0" name="maxY" sid="639285714510150" static="0" type="number">470</variable>
+        <variable comment="tamanho do layout" constant="0" name="maxX" sid="936471472286207" static="0" type="number">470</variable>
+        <variable constant="0" name="maxtargets" sid="710142285905661" static="0" type="number">6</variable>
         <event-block sid="318766955807744">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="573817470669320" type="System">
@@ -57,8 +59,8 @@
                     <param id="1" name="Value">1</param>
                 </action>
                 <action id="-3" name="Set position" sid="694125776968436" type="target">
-                    <param id="0" name="X">random(maxX)</param>
-                    <param id="1" name="Y">random(maxY)</param>
+                    <param id="0" name="X">random(minX,maxX)</param>
+                    <param id="1" name="Y">random(minY,maxY)</param>
                 </action>
             </actions>
         </event-block>
@@ -102,6 +104,10 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-9" name="Set value" sid="635584785563697" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">1</param>
+                </action>
                 <action id="-25" name="Go to layout (by name)" sid="222258334019184" type="System">
                     <param id="0" name="Layout">&quot;rip&quot;</param>
                 </action>
@@ -116,6 +122,10 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-9" name="Set value" sid="429171323895801" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">0</param>
+                </action>
                 <action id="-25" name="Go to layout (by name)" sid="552610944658221" type="System">
                     <param id="0" name="Layout">&quot;rip&quot;</param>
                 </action>
