@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>rip</name>
+    <events>
+        <event-block sid="420389774591437">
+            <conditions>
+                <condition id="0" name="On clicked" sid="136364279121018" type="Button" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="908974619944424" type="System">
+                    <param id="0" name="Layout">main</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="377053551408941" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="838786405635800">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="470237506903833" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="195348064166215" type="Text2">
+                    <param id="0" name="Text">&quot;WIN&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="245240312897553">
+            <conditions>
+                <condition id="-22" name="Else" sid="355553014191724" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="947278556243179" type="Text2">
+                    <param id="0" name="Text">&quot;RECKT&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

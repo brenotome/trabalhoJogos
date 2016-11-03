@@ -15,7 +15,9 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -45,6 +47,11 @@
     <object-folder>
         <object-type name="target" sid="510312638786246">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="461016252418441">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="839328978384887" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\Dropbox\Dropbox\fundao\jogos\target.png">
