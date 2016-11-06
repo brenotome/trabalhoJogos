@@ -68,11 +68,11 @@
                         <x>139</x>
                         <y>560</y>
                         <z>0</z>
-                        <width>119</width>
-                        <height>85</height>
+                        <width>71.400001526</width>
+                        <height>51</height>
                         <depth>0</depth>
-                        <hotspotX>0.569078922</hotspotX>
-                        <hotspotY>0.532188833</hotspotY>
+                        <hotspotX>1.#QNAN</hotspotX>
+                        <hotspotY>1.#QNAN</hotspotY>
                         <angle>-0.000022888</angle>
                         <opacity>1</opacity>
                     </world>
@@ -97,11 +97,11 @@
                         <x>395</x>
                         <y>226</y>
                         <z>0</z>
-                        <width>115</width>
-                        <height>87</height>
+                        <width>92</width>
+                        <height>66.120002747</height>
                         <depth>0</depth>
-                        <hotspotX>0.528301895</hotspotX>
-                        <hotspotY>0.506383002</hotspotY>
+                        <hotspotX>1.#QNAN</hotspotX>
+                        <hotspotY>1.#QNAN</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
