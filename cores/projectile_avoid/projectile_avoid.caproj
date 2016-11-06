@@ -48,7 +48,7 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="Sprite" sid="795299911852099">
+        <object-type name="wp" sid="795299911852099">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="DestroyOutsideLayout" sid="983500669674969">
@@ -63,22 +63,22 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="613245262748045" speed="5">
-                    <frame duration="1" hotspotX="0.569079" hotspotY="0.532189" original-source="E:\Dropbox\Dropbox\fundao\jogos\ghost.png">
+                    <frame duration="1" hotspotX="0.46" hotspotY="0.52" original-source="C:\Users\Murilo\Desktop\trabalhoJogos-master\cores\projectile_avoid\Animations\SpriteWP\Default\wp.png">
                         <collision-poly>
-                            <point x="0.233553" y="0.304721" />
-                            <point x="0.5" y="0.0257511" />
-                            <point x="0.842105" y="0.206009" />
-                            <point x="0.917763" y="0.497854" />
-                            <point x="0.842105" y="0.793991" />
-                            <point x="0.5" y="0.969957" />
-                            <point x="0.138158" y="0.819743" />
-                            <point x="0.207237" y="0.497854" />
+                            <point x="0.110141" y="0.280365" />
+                            <point x="0.475973" y="0" />
+                            <point x="0.945682" y="0.168192" />
+                            <point x="1" y="0.499834" />
+                            <point x="0.945682" y="0.836353" />
+                            <point x="0.475973" y="1" />
+                            <point x="0" y="0.865617" />
+                            <point x="0.0740096" y="0.499834" />
                         </collision-poly>
                     </frame>
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite2" sid="376450646064667">
+        <object-type name="study" sid="376450646064667">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="BoundToLayout" sid="444572817295010">
@@ -87,16 +87,16 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="331225956284735" speed="5">
-                    <frame duration="1" hotspotX="0.528302" hotspotY="0.506383" original-source="E:\Dropbox\Dropbox\fundao\jogos\ghost.png">
+                    <frame duration="1" hotspotX="0.465" hotspotY="0.452632" original-source="C:\Users\Murilo\Desktop\trabalhoJogos-master\cores\projectile_avoid\Animations\Sprite2\Default\thinkballon.png">
                         <collision-poly>
-                            <point x="0.242138" y="0.32766" />
-                            <point x="0.5" y="0.0382979" />
-                            <point x="0.833333" y="0.225532" />
-                            <point x="0.899371" y="0.497872" />
-                            <point x="0.836478" y="0.778723" />
-                            <point x="0.5" y="0.974468" />
-                            <point x="0.128931" y="0.825532" />
-                            <point x="0.220126" y="0.497872" />
+                            <point x="0.059937" y="0.115163" />
+                            <point x="0.5" y="0" />
+                            <point x="0.926666" y="0.119664" />
+                            <point x="0.955" y="0.528711" />
+                            <point x="0.950692" y="1" />
+                            <point x="0.74" y="0.963158" />
+                            <point x="0.410032" y="0.733348" />
+                            <point x="0" y="0.412922" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -113,6 +113,48 @@
         </object-type>
         <object-type name="Touch" sid="679026205136121">
             <plugin id="Touch" />
+        </object-type>
+        <object-type name="fb" sid="823690654139826">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="813738224447585">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="138982486233121">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="101004567118135" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Murilo\Desktop\trabalhoJogos-master\cores\projectile_avoid\Animations\SpriteFB\Default\fb.png">
+                        <collision-poly>
+                            <point x="0.00331126" y="0" />
+                            <point x="0.496689" y="0.00331126" />
+                            <point x="0.996689" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.496689" y="0.996689" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="436480676301870">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="307370269513821" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\Dropbox\Dropbox\fundao\jogos\school inside.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
