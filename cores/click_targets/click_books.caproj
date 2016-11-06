@@ -72,13 +72,13 @@
         <object-type name="Touch" sid="689826138327842">
             <plugin id="Touch" />
         </object-type>
-        <object-type name="Text" sid="377882201478825">
+        <object-type name="Hits" sid="377882201478825">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Text2" sid="943477421735306">
+        <object-type name="maxHits" sid="943477421735306">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Text3" sid="574911444774375">
+        <object-type name="tempo" sid="574911444774375">
             <plugin id="Text" />
         </object-type>
         <object-type name="Text4" sid="539056143711225">
@@ -91,6 +91,24 @@
             <plugin id="TiledBg" />
             <texture original-source="E:\Dropbox\Dropbox\fundao\jogos\shelf.jpg" />
         </object-type>
+        <object-type name="f2u__classroom_background_by_lo_amd85jdwi" sid="317088668598404">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="460858457721180" speed="5">
+                    <frame duration="1" hotspotX="0.500386" hotspotY="0.50081" original-source="C:\Users\Fillipe\Desktop\_f2u__classroom_background_by_lo_am-d85jdwi.png">
+                        <collision-poly>
+                            <point x="0.0316602" y="0.0664506" />
+                            <point x="0.499614" y="0" />
+                            <point x="0.999228" y="0.00162075" />
+                            <point x="1" y="1" />
+                            <point x="0.499614" y="1" />
+                            <point x="0.0316602" y="0.933549" />
+                            <point x="0.0015444" y="0.49919" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -98,8 +116,8 @@
         <layout>rip.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>main.xml</event-sheet>
-        <event-sheet>rip.xml</event-sheet>
+        <event-sheet>main events.xml</event-sheet>
+        <event-sheet>rip events.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="1">

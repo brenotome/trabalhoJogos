@@ -10,10 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="9">main</layout>
-        <layout order="11">rip</layout>
-        <event-sheet order="10">main</event-sheet>
-        <event-sheet order="12">rip</event-sheet>
+        <layout active="1" order="0">main</layout>
+        <layout order="2">rip</layout>
+        <event-sheet order="1">main events</event-sheet>
+        <event-sheet order="3">rip events</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -26,10 +26,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/target/" />
+        <folder expanded="1" path="animation-folder/f2u__classroom_background_by_lo_amd85jdwi/" />
     </folders-expanded>
 </c2uistate>
