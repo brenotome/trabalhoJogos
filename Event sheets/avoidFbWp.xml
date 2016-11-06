@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>avoidFbWp</name>
+    <events>
+        <variable constant="0" name="fbtimer" sid="332123250027308" static="0" type="number">10</variable>
+        <variable constant="0" name="rand" sid="254475533927451" static="0" type="number">0</variable>
+        <event-block sid="564340489719749">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="701743101067143" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="624432621592096" type="System">
+                    <param id="0" name="Variable">rand</param>
+                    <param id="1" name="Value">round(random(0,4))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="868897585160156">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="754447409617070" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="551247606033462">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="876977640334200" type="System">
+                            <param id="0" name="Variable">rand</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="873175176338285" type="System">
+                            <param id="0" name="Object to create">wp</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">random(50,450)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="358217851657338" type="wp">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Sine" id="3" name="Set movement" sid="216272357412506" type="wp">
+                            <param id="0" name="Movement">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="993483220856626">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="558869346628676" type="System">
+                            <param id="0" name="Variable">rand</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="637832862225185" type="System">
+                            <param id="0" name="Object to create">fb</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">random(50,750)</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="397983408970412" type="fb">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="891080585815068" type="fb">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Sine" id="3" name="Set movement" sid="582997294051542" type="fb">
+                            <param id="0" name="Movement">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="384122276983323">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="413490966748611" type="System">
+                            <param id="0" name="Variable">rand</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="320619541781353" type="System">
+                            <param id="0" name="Object to create">fb</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">800</param>
+                            <param id="3" name="Y">random(50,450)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="338073175439835" type="fb">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="661870036283191" type="fb">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Sine" id="3" name="Set movement" sid="709825929591753" type="fb">
+                            <param id="0" name="Movement">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="693444029982448">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="320755253376854" type="System">
+                            <param id="0" name="Variable">rand</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="216095418609785" type="System">
+                            <param id="0" name="Object to create">wp</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">random(50,750)</param>
+                            <param id="3" name="Y">500</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="875089692650011" type="wp">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="648454727347286" type="wp">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action behavior="Sine" id="3" name="Set movement" sid="745910609731049" type="wp">
+                            <param id="0" name="Movement">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="859282835624138">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="169339056552559" type="study">
+                    <param id="0" name="Object">wp</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="560646123100127" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="686296179868434" type="System">
+                    <param id="0" name="Layout">rip</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="300128218403691">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="493766347891457" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="299573131364919" type="System">
+                    <param id="0" name="Variable">globalTime</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="973285658907769" type="System">
+                    <param id="0" name="Variable">fbtimer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="914426536832109" type="Text">
+                    <param id="0" name="Text">globalTime</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="609247003431168">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="831853306913496" type="System">
+                    <param id="0" name="Variable">fbtimer</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="762226034802827" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="277362735739602" type="System">
+                    <param id="0" name="Layout">clickBooks</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="607685160682052">
+            <conditions>
+                <condition id="2" name="Is in touch" sid="285394201040876" type="Touch" />
+                <condition id="-8" name="Compare two values" sid="329875473291414" type="System">
+                    <param id="0" name="First value">distance(Touch.X,Touch.Y,study.X,study.Y)</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">300*dt</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="889910600364735" type="study">
+                    <param id="0" name="Angle">angle(study.X,study.Y, Touch.X,Touch.Y)</param>
+                    <param id="1" name="Distance">300*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="430094373163561">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="888378176470787" type="study">
+                    <param id="0" name="Object">fb</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="638008523633152" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="603729739575428" type="System">
+                    <param id="0" name="Layout">rip</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

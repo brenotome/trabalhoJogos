@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>runToTheClass</name>
+    <events>
+        <variable constant="0" name="step" sid="207236789962499" static="0" type="number">0</variable>
+        <variable constant="0" name="win" sid="971534229432246" static="0" type="number">0</variable>
+        <variable constant="0" name="maxTouchs" sid="859929837299753" static="0" type="number">50</variable>
+        <variable comment="number of touchs" constant="0" name="touchcount" sid="738478832991175" static="0" type="number">0</variable>
+        <event-block sid="487721412921714">
+            <conditions>
+                <condition id="14" name="On tap" sid="847341170943054" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="595538504268722" type="System">
+                    <param id="0" name="Variable">touchcount</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="862554014160918" type="System">
+                    <param id="0" name="Variable">step</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="538408352724429">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="849774619017190" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="588416282352128" type="touchs">
+                    <param id="0" name="Text">touchcount</param>
+                </action>
+                <action id="3" name="Set progress" sid="985076014766200" type="ProgressBar">
+                    <param id="0" name="Value">touchcount</param>
+                </action>
+                <action id="0" name="Set text" sid="800298891936628" type="Timer">
+                    <param id="0" name="Text">globalTime</param>
+                </action>
+                <action id="-23" name="Move at angle" sid="281430149323222" type="background">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">step</param>
+                </action>
+                <action id="-23" name="Move at angle" sid="807879656004169" type="marcadorDeLayout">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">step</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="544500576710064">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="929682158789095" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set maximum" sid="938190580967933" type="ProgressBar">
+                    <param id="0" name="Maximum">maxTouchs</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="602673718567961">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="142613513613279" type="System">
+                    <param id="0" name="Variable">touchcount</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">maxTouchs</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="634971686873220" type="Timer">
+                    <param id="0" name="Text">&quot;win&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="501263269653686" type="System">
+                    <param id="0" name="Variable">globalWin</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="764853952238153" type="System">
+                    <param id="0" name="Layout">avoidFbWp</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="838004092682994">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="312459124461588" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="784678989756975" type="System">
+                    <param id="0" name="Variable">globalTime</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="974571829040982">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="414364698537024" type="System">
+                    <param id="0" name="Variable">globalTime</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="311795087152774" type="Timer">
+                    <param id="0" name="Text">&quot;RIP&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="642645120137910" type="System">
+                    <param id="0" name="Variable">win</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="230746770130943" type="System">
+                    <param id="0" name="Layout">&quot;rip&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="333873374145474">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="949649215202421" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="850467292936182" type="System">
+                    <param id="0" name="Variable">step</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="729099937656683" type="System">
+                    <param id="0" name="Variable">step</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="149308843184507">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="612824615472214" type="System">
+                    <param id="0" name="Variable">step</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="406498813622126" type="scott">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="871606983884569">
+            <conditions>
+                <condition id="-22" name="Else" sid="884057737521975" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="166824038479903" type="scott">
+                    <param id="0" name="Animation">&quot;stand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="784730942513803">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="791416978386984" type="marcadorDeLayout">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-2050</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="807911065642554" type="System">
+                    <param id="0" name="Object to create">background</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">825</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-25" name="Move to bottom" sid="591891760179272" type="background" />
+                <action id="-9" name="Destroy" sid="749419118263269" type="marcadorDeLayout" />
+                <action id="-3" name="Create object" sid="792829835951653" type="System">
+                    <param id="0" name="Object to create">marcadorDeLayout</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">825</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

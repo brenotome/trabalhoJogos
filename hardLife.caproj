@@ -12,13 +12,21 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Facebook" version="1">Facebook</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -91,15 +99,234 @@
         <object-type name="Audio" sid="557032528749355">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="background" sid="942170767124352">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="482810290425918">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="254534685779483">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="811928538163730" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\Dropbox\Dropbox\fundao\jogos\hall.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.999655" y="0.002" />
+                            <point x="0.999655" y="0.998" />
+                            <point x="0.000344828" y="0.998" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="scott" sid="281421115445174">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="stand" pingpong="0" repeatcount="1" repeatto="0" sid="384729731001541" speed="5">
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.466667" original-source="E:\Dropbox\Dropbox\fundao\jogos\scottstand.gif">
+                        <collision-poly>
+                            <point x="0.141509" y="0.109827" />
+                            <point x="0.603774" y="0.0231214" />
+                            <point x="0.933962" y="0.190751" />
+                            <point x="0.9125" y="0.545442" />
+                            <point x="1" y="1" />
+                            <point x="0.00400942" y="1" />
+                            <point x="0.0849057" y="0.468208" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="run" pingpong="0" repeatcount="1" repeatto="0" sid="321329840611265" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.559322" original-source="E:\Dropbox\Dropbox\fundao\jogos\scott.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.086" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.504202" hotspotY="0.557377" original-source="E:\Dropbox\Dropbox\fundao\jogos\scott.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="marcadorDeLayout" sid="672568735717802">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="147193728197936" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Timer" sid="833839048112597">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="touchs" sid="697383776032193">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ProgressBar" sid="217871098724922">
+            <plugin id="progressbar" />
+            <behaviors>
+                <behavior-type name="Pin" sid="862651449058925">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="wp" sid="388579871066782">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="878339807529191">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="194097532033801">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="442821804245681">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="700851410737964" speed="5">
+                    <frame duration="1" hotspotX="0.46" hotspotY="0.52" original-source="C:\Users\Murilo\Desktop\trabalhoJogos-master\cores\projectile_avoid\Animations\SpriteWP\Default\wp.png">
+                        <collision-poly>
+                            <point x="0.110141" y="0.280365" />
+                            <point x="0.475973" y="0" />
+                            <point x="0.945682" y="0.168192" />
+                            <point x="1" y="0.499834" />
+                            <point x="0.945682" y="0.836353" />
+                            <point x="0.475973" y="1" />
+                            <point x="0" y="0.865617" />
+                            <point x="0.0740096" y="0.499834" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="study" sid="557453771119812">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="826749196199543">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="936292200953322" speed="5">
+                    <frame duration="1" hotspotX="0.465" hotspotY="0.452632" original-source="C:\Users\Murilo\Desktop\trabalhoJogos-master\cores\projectile_avoid\Animations\Sprite2\Default\thinkballon.png">
+                        <collision-poly>
+                            <point x="0.059937" y="0.115163" />
+                            <point x="0.5" y="0" />
+                            <point x="0.926666" y="0.119664" />
+                            <point x="0.955" y="0.528711" />
+                            <point x="0.950692" y="1" />
+                            <point x="0.74" y="0.963158" />
+                            <point x="0.410032" y="0.733348" />
+                            <point x="0" y="0.412922" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text" sid="524331583701957">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="fb" sid="678619255149385">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="891778163629800">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="735760836972853">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="157702217439132" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Murilo\Desktop\trabalhoJogos-master\cores\projectile_avoid\Animations\SpriteFB\Default\fb.png">
+                        <collision-poly>
+                            <point x="0.00331126" y="0" />
+                            <point x="0.496689" y="0.00331126" />
+                            <point x="0.996689" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.496689" y="0.996689" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="687596621280875">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="260951860595425" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\Dropbox\Dropbox\fundao\jogos\school inside.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text3" sid="579008499253089">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="target" sid="803957260611768">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="874334643941938">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="102581770162178" speed="5">
+                    <frame duration="1" hotspotX="0.454545" hotspotY="0.54" original-source="E:\Dropbox\Dropbox\fundao\jogos\book_sheet.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.560606" y="0" />
+                            <point x="0.984848" y="0" />
+                            <point x="0.924242" y="0.5" />
+                            <point x="0.954545" y="0.94" />
+                            <point x="0.030303" y="0.96" />
+                            <point x="0" y="0.38" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text2" sid="382146531489449">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="rip" sid="809711983335936">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Button" sid="241170634568943">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="score" sid="289967574261011">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Menu.xml</layout>
         <layout>game.xml</layout>
+        <layout>runToTheClass.xml</layout>
+        <layout>rip.xml</layout>
+        <layout>avoidFbWp.xml</layout>
+        <layout>clickBooks.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Menu.xml</event-sheet>
         <event-sheet>game.xml</event-sheet>
+        <event-sheet>runToTheClass.xml</event-sheet>
+        <event-sheet>rip.xml</event-sheet>
+        <event-sheet>avoidFbWp.xml</event-sheet>
+        <event-sheet>clickBooks.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="5">

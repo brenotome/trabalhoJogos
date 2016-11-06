@@ -2,5 +2,18 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>game</name>
-    <events />
+    <events>
+        <variable constant="0" name="globalWin" sid="247556379131830" static="0" type="number">0</variable>
+        <variable constant="0" name="globalTime" sid="346132933716244" static="0" type="number">35</variable>
+        <event-block sid="556916570641751">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="623974220834000" type="System" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="458450670752047" type="System">
+                    <param id="0" name="Layout">runToTheClass</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
