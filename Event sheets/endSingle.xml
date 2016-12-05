@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>endSingle</name>
+    <events>
+        <event-block sid="402684546595277">
+            <conditions>
+                <condition id="0" name="On clicked" sid="539989913675331" type="Button" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="342082852606459" type="Audio" />
+                <action id="-21" name="Reset global variables" sid="135886592252966" type="System" />
+                <action id="-45" name="Reset persisted objects" sid="661058895006389" type="System" />
+                <action id="-2" name="Go to layout" sid="174236151724951" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="575459801768142">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="717487803781677" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="816588926007143" type="System">
+                    <param id="0" name="Variable">globalScore</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="0" name="Set text" sid="752224664021574" type="score">
+                    <param id="0" name="Text">&quot;score:&quot;&amp; globalScore</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

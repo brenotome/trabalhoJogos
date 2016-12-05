@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>dragImage</name>
+    <events>
+        <variable constant="0" name="arrastarimagem_level" sid="994183043435130" static="0" type="number">20</variable>
+        <variable constant="0" name="arrastarimagem_time" sid="338009146369968" static="0" type="number">6</variable>
+        <event-block sid="683300521497104">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="372157059373059" type="ai_scott">
+                    <param id="0" name="Object">bus</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="522016279462824" type="System">
+                    <param id="0" name="First value">ai_scott.X-(ai_scott.Width/2)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bus.X-(bus.Width/2)</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="417581159298154" type="System">
+                    <param id="0" name="First value">ai_scott.X+(ai_scott.Width/2)</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bus.X+(bus.Width/2)</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="167906219887693" type="System">
+                    <param id="0" name="First value">ai_scott.Y+(ai_scott.Height/2)</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bus.Y+(bus.Height/2)</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="919388178397092" type="System">
+                    <param id="0" name="First value">ai_scott.Y-(ai_scott.Height/2)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bus.Y-(bus.Height/2)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="160278789952985" type="System">
+                    <param id="0" name="Layout">returnPoint</param>
+                </action>
+                <action id="-9" name="Set value" sid="393995383382403" type="System">
+                    <param id="0" name="Variable">arrastarimagem_time</param>
+                    <param id="1" name="Value">6</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="850034047166781">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="268819461823922" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="938431930832963" type="System">
+                    <param id="0" name="Variable">arrastarimagem_level</param>
+                    <param id="1" name="Value">level</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="204807836063977">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="138778182746363" type="System">
+                            <param id="0" name="Variable">arrastarimagem_level</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="110797906747774" type="System">
+                            <param id="0" name="Variable">arrastarimagem_time</param>
+                            <param id="1" name="Value">7 - arrastarimagem_level</param>
+                        </action>
+                        <action id="0" name="Set text" sid="932827448344644" type="ai_tempo">
+                            <param id="0" name="Text">&quot;Time:&quot;&amp;arrastarimagem_time</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="604045199538101">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="907960421188887" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="598816183995189" type="System">
+                            <param id="0" name="Variable">arrastarimagem_level</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="453696198849736" type="System">
+                            <param id="0" name="Variable">arrastarimagem_time</param>
+                            <param id="1" name="Value">7 - arrastarimagem_level</param>
+                        </action>
+                        <action id="0" name="Set text" sid="336898712030038" type="ai_tempo">
+                            <param id="0" name="Text">&quot;Time:&quot;&amp;arrastarimagem_time</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="958526386814181">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="237499943896542" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="849800911436919" type="System">
+                    <param id="0" name="Variable">arrastarimagem_time</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="820122184708138" type="ai_tempo">
+                    <param id="0" name="Text">&quot;Time:&quot;&amp;arrastarimagem_time</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="361424650318509">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="715514128061968" type="System">
+                    <param id="0" name="Variable">arrastarimagem_time</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="375831045788456" type="System">
+                    <param id="0" name="Layout">return_lose</param>
+                </action>
+                <action id="-9" name="Set value" sid="774276983454938" type="System">
+                    <param id="0" name="Variable">arrastarimagem_time</param>
+                    <param id="1" name="Value">6</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

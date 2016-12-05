@@ -45,6 +45,9 @@
                         <action behavior="Sine" id="3" name="Set movement" sid="216272357412506" type="wp">
                             <param id="0" name="Movement">1</param>
                         </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="106150236755978" type="wp">
+                            <param id="0" name="Speed">150*level</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="993483220856626">
@@ -70,6 +73,9 @@
                         </action>
                         <action behavior="Sine" id="3" name="Set movement" sid="582997294051542" type="fb">
                             <param id="0" name="Movement">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="842759974892071" type="fb">
+                            <param id="0" name="Speed">150*level</param>
                         </action>
                     </actions>
                 </event-block>
@@ -97,6 +103,9 @@
                         <action behavior="Sine" id="3" name="Set movement" sid="709825929591753" type="fb">
                             <param id="0" name="Movement">1</param>
                         </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="718352766559650" type="fb">
+                            <param id="0" name="Speed">150*level</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="693444029982448">
@@ -123,6 +132,9 @@
                         <action behavior="Sine" id="3" name="Set movement" sid="745910609731049" type="wp">
                             <param id="0" name="Movement">0</param>
                         </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="751090644586366" type="wp">
+                            <param id="0" name="Speed">150*level</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -134,12 +146,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="560646123100127" type="System">
-                    <param id="0" name="Variable">win</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-2" name="Go to layout" sid="686296179868434" type="System">
-                    <param id="0" name="Layout">rip</param>
+                <action id="-25" name="Go to layout (by name)" sid="436478459678643" type="System">
+                    <param id="0" name="Layout">return_lose</param>
                 </action>
             </actions>
         </event-block>
@@ -172,12 +180,16 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="762226034802827" type="System">
-                    <param id="0" name="Variable">win</param>
-                    <param id="1" name="Value">2</param>
+                <action id="-10" name="Add to" sid="762226034802827" type="System">
+                    <param id="0" name="Variable">globalWin</param>
+                    <param id="1" name="Value">1</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="277362735739602" type="System">
-                    <param id="0" name="Layout">clickBooks</param>
+                <action id="-9" name="Set value" sid="187763693336805" type="System">
+                    <param id="0" name="Variable">fbtimer</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="666155098189579" type="System">
+                    <param id="0" name="Layout">str(returnPoint)</param>
                 </action>
             </actions>
         </event-block>
@@ -204,12 +216,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="638008523633152" type="System">
-                    <param id="0" name="Variable">win</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-2" name="Go to layout" sid="603729739575428" type="System">
-                    <param id="0" name="Layout">rip</param>
+                <action id="-25" name="Go to layout (by name)" sid="552417004130091" type="System">
+                    <param id="0" name="Layout">return_lose</param>
                 </action>
             </actions>
         </event-block>

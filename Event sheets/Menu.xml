@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Menu</name>
     <events>
+        <variable comment="change button from multiplayer to 2 3 4" constant="0" name="open_multi" sid="711297264644496" static="0" type="number">0</variable>
         <event-block sid="480025536093796">
             <conditions>
                 <condition id="4" name="Is touching object" sid="388310471879904" type="Touch">
@@ -28,28 +29,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="419197278416518">
-            <conditions>
-                <condition id="2" name="Is in touch" sid="121099960464706" type="Touch" />
-                <condition id="4" inverted="1" name="Is touching object" sid="397245924320756" type="Touch">
-                    <param id="0" name="Object">btn_close</param>
-                </condition>
-                <condition id="4" inverted="1" name="Is touching object" sid="515111147890497" type="Touch">
-                    <param id="0" name="Object">btn_facebook</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="339525014608451" type="System">
-                    <param id="0" name="Layout">game</param>
-                </action>
-                <action id="0" name="Play" sid="773738762163117" type="Audio">
-                    <param id="0" name="Audio file">bell</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="154889036152557">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="378000145872965" type="System" />
@@ -59,7 +38,179 @@
                     <param id="0" name="Audio file">main</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;main&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="646010900377272">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="580908324384768" type="Touch">
+                    <param id="0" name="Object">btn_single</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="536741306528021" type="System">
+                    <param id="0" name="Layout">single</param>
+                </action>
+                <action id="0" name="Play" sid="954101054643638" type="Audio">
+                    <param id="0" name="Audio file">bell</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="539814780264623" type="System">
+                    <param id="0" name="Variable">setUpGame</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="839813657077169" type="System">
+                    <param id="0" name="Variable">returnPoint</param>
+                    <param id="1" name="Value">&quot;single&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="524246276444761" type="System">
+                    <param id="0" name="Variable">return_lose</param>
+                    <param id="1" name="Value">&quot;endSingle&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="480800643389646">
+            <conditions>
+                <condition id="17" name="On tap object" sid="366549682502004" type="Touch">
+                    <param id="0" name="Object">btn_multiplayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="323818263527922" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="846907932162262" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="293896124372021" type="System">
+                    <param id="0" name="Variable">open_multi</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="411155788017863" type="System">
+                    <param id="0" name="Variable">return_lose</param>
+                    <param id="1" name="Value">&quot;playerLose&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="386937418519396">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="861850315343597" type="Touch">
+                    <param id="0" name="Object">2players</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="939503482367632" type="System">
+                    <param id="0" name="Variable">open_multi</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="892433741498938" type="System">
+                    <param id="0" name="Layout">multi</param>
+                </action>
+                <action id="0" name="Play" sid="330293828257395" type="Audio">
+                    <param id="0" name="Audio file">bell</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="101595664671084" type="System">
+                    <param id="0" name="Variable">return_lose</param>
+                    <param id="1" name="Value">&quot;playerLose&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="674769038230231" type="System">
+                    <param id="0" name="Variable">setUpGame</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="263064096477640" type="System">
+                    <param id="0" name="Variable">returnPoint</param>
+                    <param id="1" name="Value">&quot;multi&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="106492169168972" type="System">
+                    <param id="0" name="Variable">players</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="333568767704200">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="900820575306370" type="Touch">
+                    <param id="0" name="Object">3players</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="981766986977123" type="System">
+                    <param id="0" name="Variable">open_multi</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="747800015675882" type="System">
+                    <param id="0" name="Layout">multi</param>
+                </action>
+                <action id="0" name="Play" sid="810139316041256" type="Audio">
+                    <param id="0" name="Audio file">bell</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="244951647951131" type="System">
+                    <param id="0" name="Variable">return_lose</param>
+                    <param id="1" name="Value">&quot;playerLose&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="876052349641860" type="System">
+                    <param id="0" name="Variable">setUpGame</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="209140695974590" type="System">
+                    <param id="0" name="Variable">returnPoint</param>
+                    <param id="1" name="Value">&quot;multi&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="192656876158574" type="System">
+                    <param id="0" name="Variable">players</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="208160868208311">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="714240940516346" type="Touch">
+                    <param id="0" name="Object">4players</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="393635508318054" type="System">
+                    <param id="0" name="Variable">open_multi</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="625033452934983" type="System">
+                    <param id="0" name="Layout">multi</param>
+                </action>
+                <action id="0" name="Play" sid="124360824492196" type="Audio">
+                    <param id="0" name="Audio file">bell</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="272381213074769" type="System">
+                    <param id="0" name="Variable">setUpGame</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="954210359687453" type="System">
+                    <param id="0" name="Variable">returnPoint</param>
+                    <param id="1" name="Value">&quot;multi&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="356999554956926" type="System">
+                    <param id="0" name="Variable">return_lose</param>
+                    <param id="1" name="Value">&quot;playerLose&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="586864053483240" type="System">
+                    <param id="0" name="Variable">players</param>
+                    <param id="1" name="Value">4</param>
                 </action>
             </actions>
         </event-block>

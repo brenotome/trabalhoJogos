@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>monkey</name>
+    <events>
+        <variable constant="0" name="Objetivo" sid="979710632677541" static="0" type="number">10</variable>
+        <variable constant="0" name="MS_Win" sid="932980453971681" static="0" type="number">0</variable>
+        <variable constant="0" name="MS_Temporizador" sid="216532314181490" static="0" type="number">0</variable>
+        <variable constant="0" name="MS_Level" sid="135168916360803" static="0" type="number">1</variable>
+        <variable constant="0" name="MS_Hits" sid="775838612121283" static="0" type="number">0</variable>
+        <variable constant="0" name="MS_Erros" sid="726815513038918" static="0" type="number">3</variable>
+        <event-block sid="442656534358705">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="275312613485200" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="656667694866267" type="System">
+                    <param id="0" name="Variable">MS_Level</param>
+                    <param id="1" name="Value">level</param>
+                </action>
+                <action id="4" name="Set animation" sid="707696738361530" type="Command">
+                    <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="799121340074462" type="Command">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Play" sid="969208181541004" type="Audio">
+                    <param id="0" name="Audio file">mix_aweek</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;mix&quot;</param>
+                </action>
+                <action id="22" name="Set paused" sid="228693703026819" type="Audio">
+                    <param id="0" name="Tag">&quot;main&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="869075544935239">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="369087814947813" type="System">
+                            <param id="0" name="Variable">MS_Level</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="940431728144997" type="System">
+                            <param id="0" name="Variable">Objetivo</param>
+                            <param id="1" name="Value">10 + (2 * MS_Level)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="795106676339809">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="100756988979732" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="376870641142735" type="System">
+                            <param id="0" name="Variable">MS_Level</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="121451553915241" type="System">
+                            <param id="0" name="Variable">Objetivo</param>
+                            <param id="1" name="Value">10 + (2 * MS_Level)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="843182943100284">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="371004298458222" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="545564321395238" type="Hits">
+                    <param id="0" name="Text">&quot;Hits:&quot;&amp;MS_Hits</param>
+                </action>
+                <action id="0" name="Set text" sid="775363642567006" type="Boo">
+                    <param id="0" name="Text">&quot;Vidas:&quot;&amp;MS_Erros</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="309470004495960">
+            <conditions>
+                <condition id="17" name="On tap object" sid="125099735712691" type="Touch">
+                    <param id="0" name="Object">Y</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="356450564175279" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="580488232573925" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;UpY&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="746246653022594" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="4" name="Set animation" sid="571057911251927" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="267961533312392">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="184919564090812" type="Command">
+                            <param id="0" name="Animation">&quot;Y&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="648750916237702" type="System">
+                            <param id="0" name="Variable">MS_Hits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="167822308214958" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="771690818730351">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="691169319653749" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="644217697204053" type="Audio">
+                            <param id="0" name="Audio file">boo</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="468875514116800" type="System">
+                            <param id="0" name="Variable">MS_Erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="692984657690287" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="829472168833415">
+            <conditions>
+                <condition id="17" name="On tap object" sid="986024446698569" type="Touch">
+                    <param id="0" name="Object">A</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="489604514914448" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="732386852115767" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;DownA&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="517651833512623" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="4" name="Set animation" sid="929513809566091" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="212962564663003">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="278944192359105" type="Command">
+                            <param id="0" name="Animation">&quot;A&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="530965855879088" type="System">
+                            <param id="0" name="Variable">MS_Hits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="794207751458081" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="303869153029655">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="366149202146905" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="591722626823251" type="Audio">
+                            <param id="0" name="Audio file">boo</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="126160347213752" type="System">
+                            <param id="0" name="Variable">MS_Erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="668196562942476" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="612214010228402">
+            <conditions>
+                <condition id="17" name="On tap object" sid="740852243120926" type="Touch">
+                    <param id="0" name="Object">B</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="655775765387474" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="588124762771909" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;RightB&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="777565390388579" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="4" name="Set animation" sid="875153257941121" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="691714806170687">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="547823122677263" type="Command">
+                            <param id="0" name="Animation">&quot;B&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="248121202093360" type="System">
+                            <param id="0" name="Variable">MS_Hits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="617415818615591" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="601246874836582">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="387736285539279" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="770295907690847" type="Audio">
+                            <param id="0" name="Audio file">boo</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="884703216945127" type="System">
+                            <param id="0" name="Variable">MS_Erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="217133048167778" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="423522583227356">
+            <conditions>
+                <condition id="17" name="On tap object" sid="783842474887450" type="Touch">
+                    <param id="0" name="Object">X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="250857096888238" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="762791878247855" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;LeftX&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="770995436846668" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="4" name="Set animation" sid="721681781556756" type="monkey_Scott">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="723553318885206">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="290572464497097" type="Command">
+                            <param id="0" name="Animation">&quot;X&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="261659402404237" type="System">
+                            <param id="0" name="Variable">MS_Hits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="633382571128067" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="426540213987411">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="800911740215224" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="652097631621838" type="Audio">
+                            <param id="0" name="Audio file">boo</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="691175338420090" type="System">
+                            <param id="0" name="Variable">MS_Erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="246508489069485" type="Command">
+                            <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="230263326800641">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="551366019774898" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="783843180115998" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="574194569046856">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="881336281332103" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="520224326592974" type="Audio">
+                    <param id="0" name="Audio file">boo</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="747719799428271" type="Command">
+                    <param id="0" name="Animation">choose(&quot;A&quot;,&quot;B&quot;,&quot;X&quot;,&quot;Y&quot;)</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="287286189818192" type="System">
+                    <param id="0" name="Variable">MS_Erros</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="592049429409770" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>vitoria</comment>
+        <event-block sid="179352999036824">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="171249050751271" type="System">
+                    <param id="0" name="Variable">MS_Hits</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">Objetivo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="244937147276759" type="Audio">
+                    <param id="0" name="Tag">&quot;mix&quot;</param>
+                </action>
+                <action id="22" name="Set paused" sid="984668094283399" type="Audio">
+                    <param id="0" name="Tag">&quot;main&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="588798739080692" type="System">
+                    <param id="0" name="Layout">returnPoint</param>
+                </action>
+                <action id="-9" name="Set value" sid="303590349427866" type="System">
+                    <param id="0" name="Variable">MS_Erros</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="481104463775633" type="System">
+                    <param id="0" name="Variable">MS_Hits</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="770136546615270" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>derrota</comment>
+        <event-block sid="258260362539384">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="423095507174405" type="System">
+                    <param id="0" name="Variable">MS_Erros</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="143286838066308" type="Audio">
+                    <param id="0" name="Tag">&quot;mix&quot;</param>
+                </action>
+                <action id="22" name="Set paused" sid="716669122056859" type="Audio">
+                    <param id="0" name="Tag">&quot;main&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="997757514457432" type="System">
+                    <param id="0" name="Layout">return_lose</param>
+                </action>
+                <action id="-9" name="Set value" sid="643923029728508" type="System">
+                    <param id="0" name="Variable">MS_Erros</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="690620512557271" type="System">
+                    <param id="0" name="Variable">MS_Hits</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="145553858568295" type="System">
+                    <param id="0" name="Variable">MS_Temporizador</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

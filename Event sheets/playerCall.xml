@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>playerCall</name>
+    <events>
+        <event-block sid="960461948456008">
+            <conditions>
+                <condition id="15" name="On double-tap" sid="690869726727271" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="420871561061022" type="System">
+                    <param id="0" name="Layout">nextGame</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="334285923364983">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="280585924828959" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="653721169843813" type="lbl_ready">
+                    <param id="0" name="Text">&quot;PLAYER&quot;&amp; playersAtivos.At(playListIndex-1,0)+1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

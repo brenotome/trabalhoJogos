@@ -1,0 +1,946 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>calculator</name>
+    <events>
+        <variable constant="0" name="Calc_level" sid="886914753464203" static="0" type="number">1</variable>
+        <variable constant="0" name="Calc_Ndigits" sid="902724073068809" static="0" type="number">0</variable>
+        <variable constant="0" name="Calc_Fator2" sid="679261128726549" static="0" type="number">0</variable>
+        <variable constant="0" name="Calc_Fator1" sid="495098009860540" static="0" type="number">0</variable>
+        <variable constant="0" name="Calc_Win" sid="168920635836306" static="0" type="number">0</variable>
+        <variable constant="0" name="Calc_Tempo" sid="329431318727020" static="0" type="number">0</variable>
+        <variable constant="0" name="Calc_Erros" sid="148556152973905" static="0" type="number">3</variable>
+        <variable constant="0" name="Calc_Acertos" sid="860914341495292" static="0" type="number">0</variable>
+        <event-block sid="530151260224365">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="901614338711435" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="411158514158257" type="System">
+                    <param id="0" name="Variable">Calc_level</param>
+                    <param id="1" name="Value">level</param>
+                </action>
+                <action id="0" name="Set text" sid="540670550476376" type="ButtonEqual">
+                    <param id="0" name="Text">&quot;=&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="957974217339037" type="ButtonNumeral0">
+                    <param id="0" name="Text">&quot;0&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="860329931742081" type="ButtonNumeral1">
+                    <param id="0" name="Text">&quot;1&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="336634582499137" type="ButtonNumeral2">
+                    <param id="0" name="Text">&quot;2&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="744983818805462" type="ButtonNumeral3">
+                    <param id="0" name="Text">&quot;3&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="135812332823385" type="ButtonNumeral4">
+                    <param id="0" name="Text">&quot;4&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="188263204886499" type="ButtonNumeral5">
+                    <param id="0" name="Text">&quot;5&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="193886538025936" type="ButtonNumeral6">
+                    <param id="0" name="Text">&quot;6&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="118212265302214" type="ButtonNumeral7">
+                    <param id="0" name="Text">&quot;7&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="341069156107717" type="ButtonNumeral8">
+                    <param id="0" name="Text">&quot;8&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="159496651362139" type="ButtonNumeral9">
+                    <param id="0" name="Text">&quot;9&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="976003926758836" type="ButtonC">
+                    <param id="0" name="Text">&quot;C&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="194906163120067" type="ButtonEqual">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;10em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="661076321707345" type="ButtonNumeral0">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="147074265887083" type="ButtonNumeral1">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="728323311290674" type="ButtonNumeral2">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="462702229867978" type="ButtonNumeral3">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="652844457563567" type="ButtonNumeral4">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="464057769892107" type="ButtonNumeral5">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="189900422204542" type="ButtonNumeral6">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="786701900913655" type="ButtonNumeral7">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="318406094896385" type="ButtonNumeral8">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="455829010309035" type="ButtonNumeral9">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="349447159524056" type="ButtonC">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;5em&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="490633444175736" type="ButtonEqual">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="258048264569208" type="ButtonNumeral0">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="895993589728330" type="ButtonNumeral1">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="669627270040567" type="ButtonNumeral2">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="573415295560083" type="ButtonNumeral3">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="759935741724432" type="ButtonNumeral4">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="111395181197936" type="ButtonNumeral5">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="451115517936318" type="ButtonNumeral6">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="186213436744664" type="ButtonNumeral7">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="841648645962776" type="ButtonNumeral8">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="983300929864511" type="ButtonNumeral9">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="992628309810586" type="ButtonC">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;3px solid #AAAAAA&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="254680444133097" type="ButtonDead">
+                    <param id="0" name="Property name">&quot;background-color&quot;</param>
+                    <param id="1" name="Value">&quot;white&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="343497810614507">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="651802520420530" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="976693581275606" type="Fator1">
+                    <param id="0" name="Instance variable">Valor</param>
+                    <param id="1" name="Value">round(random(9,49))</param>
+                </action>
+                <action id="-10" name="Set value" sid="170031400569487" type="Fator2">
+                    <param id="0" name="Instance variable">Valor</param>
+                    <param id="1" name="Value">round(random(9,49))</param>
+                </action>
+                <action id="0" name="Set text" sid="889819436866634" type="Oper">
+                    <param id="0" name="Text">&quot;+&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="672546884045100" type="Igual">
+                    <param id="0" name="Text">&quot;=&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="463215584058044" type="Result">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="709724059451208" type="Fator1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="357807501368252" type="Fator2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="360736835137245" type="Igual">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="210339235527356" type="Oper">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="360948794526774" type="Result">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="360573290504531">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="919707844906539" type="System">
+                            <param id="0" name="Variable">Calc_level</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="727804617104469" type="System">
+                            <param id="0" name="Variable">Calc_Tempo</param>
+                            <param id="1" name="Value">20 - (2 * Calc_level)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="117728190227221">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="708578575963545" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="540763442010857" type="System">
+                            <param id="0" name="Variable">Calc_level</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="351068372157652" type="System">
+                            <param id="0" name="Variable">Calc_Tempo</param>
+                            <param id="1" name="Value">20 - (2 * Calc_level)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="383688485376972">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="550811829072977" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="223406886060849" type="Acertos">
+                    <param id="0" name="Text">&quot;Hits:&quot;&amp;Calc_Acertos</param>
+                </action>
+                <action id="0" name="Set text" sid="707316161233981" type="Erros">
+                    <param id="0" name="Text">&quot;Mistakes:&quot;&amp;Calc_Erros</param>
+                </action>
+                <action id="0" name="Set text" sid="316581297373466" type="tempo">
+                    <param id="0" name="Text">&quot;Time:&quot;&amp;Calc_Tempo</param>
+                </action>
+                <action id="0" name="Set text" sid="568685070807847" type="Fator1">
+                    <param id="0" name="Text">Fator1.Valor</param>
+                </action>
+                <action id="0" name="Set text" sid="731454542879749" type="Fator2">
+                    <param id="0" name="Text">Fator2.Valor</param>
+                </action>
+                <action id="0" name="Set text" sid="594440045840946" type="Result">
+                    <param id="0" name="Text">Result.Valor</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="995021697254515">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="724238786054360" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="370191621709633" type="System">
+                    <param id="0" name="Variable">Calc_Tempo</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="337267501169134">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="737268200384099" type="System">
+                    <param id="0" name="Variable">Calc_Tempo</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="473203004501708" type="System">
+                    <param id="0" name="Layout">return_lose</param>
+                </action>
+                <action id="-9" name="Set value" sid="438442414728030" type="System">
+                    <param id="0" name="Variable">Calc_Acertos</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="108008304391745" type="System">
+                    <param id="0" name="Variable">Calc_Erros</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="454727722576310">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="947357471880402" type="System">
+                    <param id="0" name="Variable">Calc_Acertos</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="489574894513259" type="System">
+                    <param id="0" name="Layout">returnPoint</param>
+                </action>
+                <action id="-9" name="Set value" sid="580787890816751" type="System">
+                    <param id="0" name="Variable">Calc_Acertos</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="367007602372132" type="System">
+                    <param id="0" name="Variable">Calc_Erros</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="907428136340643">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="452774798268657" type="System">
+                    <param id="0" name="Variable">Calc_Erros</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="118770624971913" type="System">
+                    <param id="0" name="Layout">return_lose</param>
+                </action>
+                <action id="-9" name="Set value" sid="437582442675127" type="System">
+                    <param id="0" name="Variable">Calc_Acertos</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="820476707214492" type="System">
+                    <param id="0" name="Variable">Calc_Erros</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="571692897539939">
+            <conditions>
+                <condition id="0" name="On clicked" sid="746029295309977" type="ButtonNumeral0" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="433015619854007">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="574288047794357" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="547641126554133" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="597403878021420">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="154849595770363" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="176315841199777">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="102024137747412" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="630942514427224" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="511559676290840">
+            <conditions>
+                <condition id="0" name="On clicked" sid="616936213238728" type="ButtonNumeral1" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="337207256959574">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="430113889902620" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="589732894216382" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="492521473998754" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">1 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="906236252521173">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="223328576706871" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="157798752551740">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="328263883168512" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="422807462490431" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="421776595325676" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="265416941745722">
+            <conditions>
+                <condition id="0" name="On clicked" sid="895903076830490" type="ButtonNumeral2" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="644877456133450">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="929308246089596" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="894919561786067" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="701294134906163" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">2 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="422371082924912">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="664738463620981" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="267583615274002">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="378208937109361" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="191680672688494" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="899756763351441" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="483320159394765">
+            <conditions>
+                <condition id="0" name="On clicked" sid="512381645085842" type="ButtonNumeral3" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="557372891499583">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="346307849820799" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="669006254776838" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="417472664247316" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">3 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="540458613609915">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="436877413816907" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="426511496375908">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="393134584960467" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="842001918366087" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="436307465222326" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="279989165783089">
+            <conditions>
+                <condition id="0" name="On clicked" sid="949208375707024" type="ButtonNumeral4" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="413607417794694">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="287309563359022" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="422656258908547" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="989334806834922" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">4 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="781179239333589">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="888698296903553" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="425405178095708">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="538621708275605" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="809276473867612" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="234565894314199" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="224511621033961">
+            <conditions>
+                <condition id="0" name="On clicked" sid="357085433416964" type="ButtonNumeral5" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="140888647884390">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="604415031056153" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="508885672275661" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="876414100243637" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">5 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="135583024273732">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="594399254317289" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="785204608247576">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="373068668312810" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="842563930779304" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="874481567779157" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="318723237363744">
+            <conditions>
+                <condition id="0" name="On clicked" sid="258279573720020" type="ButtonNumeral6" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="824774232571146">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="740022698859775" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="366127002775728" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="570803004266528" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">6 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="784453568023207">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="307540212787890" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="995610743580735">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="349793309829063" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="973288958639847" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="931652066959469" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">6</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="458338429662389">
+            <conditions>
+                <condition id="0" name="On clicked" sid="920813920645724" type="ButtonNumeral7" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="631689132458299">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="577794942920654" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="455986874780148" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="169353137218790" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">7 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="619708435733306">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="480661523640592" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="136348786343298">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="296913445632309" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="589412921579816" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="823436937992150" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">7</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="143292460472097">
+            <conditions>
+                <condition id="0" name="On clicked" sid="611768526812537" type="ButtonNumeral8" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="596544714979796">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="956910670997785" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="503970417690133" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="215290558190350" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">8 *  10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="417851578266556">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="625421812797685" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="566508140320012">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="983096585534782" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="790893954077748" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="780140729048945" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="704127068826389">
+            <conditions>
+                <condition id="0" name="On clicked" sid="336736602559185" type="ButtonNumeral9" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="498831257124702">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="556448302907263" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="596598151583875" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="469542097046527" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">9 * 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="913596092012132">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="455880591088385" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="909195827436655">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="582699068199870" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="702035714637120" type="System">
+                                    <param id="0" name="Variable">Calc_Ndigits</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="592568311701898" type="Result">
+                                    <param id="0" name="Instance variable">Valor</param>
+                                    <param id="1" name="Value">9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="492096425761163">
+            <conditions>
+                <condition id="0" name="On clicked" sid="788064248774645" type="ButtonEqual" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="204400533417069">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="256521376313028" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Fator1.Valor + Fator2.Valor</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="689297109246536" type="System">
+                            <param id="0" name="Variable">Calc_Acertos</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="943672428852828" type="Fator1">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">round(random(9,49))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="903920105360964" type="Fator2">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">round(random(9,49))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="142586262567995" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="170320685338307" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="306652682464642">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="124126564829500" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="327028769950997" type="System">
+                            <param id="0" name="Variable">Calc_Erros</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="447384253424311" type="Fator1">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">round(random(9,49))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="920289966230727" type="Fator2">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">round(random(9,49))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="177407007779816" type="Result">
+                            <param id="0" name="Instance variable">Valor</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="979259468797605" type="System">
+                            <param id="0" name="Variable">Calc_Ndigits</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="918560537605465">
+            <conditions>
+                <condition id="0" name="On clicked" sid="632243192654670" type="ButtonC" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="179438566538826" type="Result">
+                    <param id="0" name="Instance variable">Valor</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

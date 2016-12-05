@@ -3,115 +3,150 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>clickBooks</name>
     <events>
-        <variable constant="0" name="minY" sid="185874763387006" static="0" type="number">57</variable>
-        <variable constant="0" name="minX" sid="725076651655508" static="0" type="number">57</variable>
-        <variable constant="0" name="hits" sid="761995282261187" static="0" type="number">0</variable>
-        <variable comment="tamanho do layout" constant="0" name="maxY" sid="921008072152718" static="0" type="number">450</variable>
-        <variable comment="tamanho do layout" constant="0" name="maxX" sid="779539066475949" static="0" type="number">450</variable>
-        <variable constant="0" name="maxtargets" sid="603015085233468" static="0" type="number">6</variable>
-        <event-block sid="109822589424163">
+        <variable constant="0" name="CB_Level" sid="732671259050355" static="0" type="number">5</variable>
+        <variable constant="0" name="CB_minY" sid="728777786104415" static="0" type="number">57</variable>
+        <variable constant="0" name="CB_minX" sid="521647505221968" static="0" type="number">57</variable>
+        <variable constant="0" name="CB_timer" sid="132299349010670" static="0" type="number">15</variable>
+        <variable constant="0" name="CB_hits" sid="649235834396539" static="0" type="number">0</variable>
+        <variable comment="tamanho do layout" constant="0" name="CB_maxY" sid="850957271527829" static="0" type="number">450</variable>
+        <variable comment="tamanho do layout" constant="0" name="CB_maxX" sid="169160289026976" static="0" type="number">450</variable>
+        <variable constant="0" name="CB_maxtargets" sid="658929542349022" static="0" type="number">10</variable>
+        <event-block sid="565836704854274">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="321110279427321" type="System" />
+                <condition id="-2" name="On start of layout" sid="263690077139121" type="System" />
             </conditions>
             <actions>
-                <action id="-3" name="Create object" sid="465819347163847" type="System">
+                <action id="-9" name="Set value" sid="339564982623105" type="System">
+                    <param id="0" name="Variable">CB_Level</param>
+                    <param id="1" name="Value">level</param>
+                </action>
+                <action id="-3" name="Create object" sid="689940239934694" type="System">
                     <param id="0" name="Object to create">target</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">random(maxX)</param>
-                    <param id="3" name="Y">random(maxY)</param>
+                    <param id="2" name="X">random(CB_maxX)</param>
+                    <param id="3" name="Y">random(CB_maxY)</param>
                 </action>
-                <action id="-15" name="Set visible" sid="822700165842659" type="target">
+                <action id="-15" name="Set visible" sid="600428232596525" type="target">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="0" name="Set text" sid="660031813837183" type="Text2">
-                    <param id="0" name="Text">&quot;maxHits:&quot;&amp;maxtargets</param>
-                </action>
-                <action id="0" name="Set text" sid="189718381548362" type="Text3">
-                    <param id="0" name="Text">&quot;time:&quot;&amp;globalTime</param>
+                <action id="0" name="Set text" sid="877950460458514" type="tempo">
+                    <param id="0" name="Text">&quot;time:&quot;&amp;CB_timer</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="312497403765399">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="222170045945851" type="System">
+                            <param id="0" name="Variable">CB_Level</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="373790363258602" type="System">
+                            <param id="0" name="Variable">CB_timer</param>
+                            <param id="1" name="Value">15 - CB_Level</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="766231635466964">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="561849601645122" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="823287283127369" type="System">
+                            <param id="0" name="Variable">CB_Level</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="352750836896132" type="System">
+                            <param id="0" name="Variable">CB_timer</param>
+                            <param id="1" name="Value">15 - CB_Level</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
-        <event-block sid="554952488438190">
+        <event-block sid="536530344116479">
             <conditions>
-                <condition id="4" name="Is touching object" sid="680899755899566" type="Touch">
-                    <param id="0" name="Object">target</param>
-                </condition>
+                <condition id="-1" name="Every tick" sid="930465091922446" type="System" />
             </conditions>
             <actions>
-                <action id="-10" name="Add to" sid="749083213082876" type="System">
-                    <param id="0" name="Variable">hits</param>
-                    <param id="1" name="Value">1</param>
+                <action id="0" name="Set text" sid="487881826177302" type="Hits">
+                    <param id="0" name="Text">&quot;Hits:&quot;&amp;CB_hits</param>
                 </action>
-                <action id="-3" name="Set position" sid="374841286824670" type="target">
-                    <param id="0" name="X">random(minX,maxX)</param>
-                    <param id="1" name="Y">random(minY,maxY)</param>
+                <action id="0" name="Set text" sid="256428892295391" type="tempo">
+                    <param id="0" name="Text">&quot;Time:&quot;&amp;CB_timer</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="314836582472794">
+        <event-block sid="496459665874718">
             <conditions>
-                <condition id="-1" name="Every tick" sid="771837641915706" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="130870765252641" type="Text">
-                    <param id="0" name="Text">&quot;hits:&quot;&amp;hits</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="935908559499267">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="891430248897487" type="System">
+                <condition id="-6" name="Every X seconds" sid="836812571299678" type="System">
                     <param id="0" name="Interval (seconds)">1.0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-11" name="Subtract from" sid="335923921178523" type="System">
-                    <param id="0" name="Variable">globalTime</param>
+                <action id="-11" name="Subtract from" sid="630671094752002" type="System">
+                    <param id="0" name="Variable">CB_timer</param>
                     <param id="1" name="Value">1</param>
-                </action>
-                <action id="0" name="Set text" sid="890023890725810" type="Text3">
-                    <param id="0" name="Text">&quot;time:&quot;&amp;globalTime</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="403910739813233">
+        <event-block sid="879078921691614">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="448163734944618" type="System">
-                    <param id="0" name="Variable">hits</param>
+                <condition id="-14" name="Compare variable" sid="419972717411812" type="System">
+                    <param id="0" name="Variable">CB_hits</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">maxtargets</param>
+                    <param id="2" name="Value">CB_maxtargets</param>
                 </condition>
-                <condition id="-14" name="Compare variable" sid="154141493799057" type="System">
-                    <param id="0" name="Variable">globalTime</param>
+                <condition id="-14" name="Compare variable" sid="558307143690165" type="System">
+                    <param id="0" name="Variable">CB_timer</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="644880525896275" type="System">
-                    <param id="0" name="Variable">globalWin</param>
-                    <param id="1" name="Value">3</param>
+                <action id="-9" name="Set value" sid="919673283859516" type="System">
+                    <param id="0" name="Variable">CB_hits</param>
+                    <param id="1" name="Value">0</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="679054212742202" type="System">
-                    <param id="0" name="Layout">rip</param>
+                <action id="-25" name="Go to layout (by name)" sid="581335124389874" type="System">
+                    <param id="0" name="Layout">returnPoint</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="952564925729912">
+        <event-block sid="509451767215866">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="905034048751728" type="System">
-                    <param id="0" name="Variable">globalTime</param>
+                <condition id="-14" name="Compare variable" sid="129502287815914" type="System">
+                    <param id="0" name="Variable">CB_timer</param>
                     <param id="1" name="Comparison">3</param>
                     <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="530052160274309" type="System">
-                    <param id="0" name="Variable">win</param>
+                <action id="-9" name="Set value" sid="422861420264475" type="System">
+                    <param id="0" name="Variable">CB_hits</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="-25" name="Go to layout (by name)" sid="385993629495931" type="System">
-                    <param id="0" name="Layout">&quot;rip&quot;</param>
+                <action id="-25" name="Go to layout (by name)" sid="430110352787652" type="System">
+                    <param id="0" name="Layout">return_lose</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="173269379885861">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="117833283689848" type="Touch">
+                    <param id="0" name="Object">target</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="627465561741465" type="System">
+                    <param id="0" name="Variable">CB_hits</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-3" name="Set position" sid="572624929944797" type="target">
+                    <param id="0" name="X">random(CB_minX,CB_maxX)</param>
+                    <param id="1" name="Y">random(CB_minY,CB_maxY)</param>
                 </action>
             </actions>
         </event-block>

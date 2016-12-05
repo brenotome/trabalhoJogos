@@ -3,9 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>runToTheClass</name>
     <events>
+        <variable constant="0" name="runner_timer" sid="866912577557428" static="0" type="number">6</variable>
         <variable constant="0" name="step" sid="207236789962499" static="0" type="number">0</variable>
-        <variable constant="0" name="win" sid="971534229432246" static="0" type="number">0</variable>
-        <variable constant="0" name="maxTouchs" sid="859929837299753" static="0" type="number">50</variable>
+        <variable constant="0" name="maxTouchs" sid="859929837299753" static="0" type="number">5</variable>
         <variable comment="number of touchs" constant="0" name="touchcount" sid="738478832991175" static="0" type="number">0</variable>
         <event-block sid="487721412921714">
             <conditions>
@@ -68,12 +68,24 @@
                 <action id="0" name="Set text" sid="634971686873220" type="Timer">
                     <param id="0" name="Text">&quot;win&quot;</param>
                 </action>
-                <action id="-9" name="Set value" sid="501263269653686" type="System">
+                <action id="-10" name="Add to" sid="501263269653686" type="System">
                     <param id="0" name="Variable">globalWin</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="764853952238153" type="System">
-                    <param id="0" name="Layout">avoidFbWp</param>
+                <action id="-9" name="Set value" sid="428561248913776" type="System">
+                    <param id="0" name="Variable">touchcount</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="375354404671186" type="System">
+                    <param id="0" name="Variable">maxTouchs</param>
+                    <param id="1" name="Value">level*5</param>
+                </action>
+                <action id="-9" name="Set value" sid="678396180284412" type="System">
+                    <param id="0" name="Variable">step</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="764853952238153" type="System">
+                    <param id="0" name="Layout">str(returnPoint)</param>
                 </action>
             </actions>
         </event-block>
@@ -85,7 +97,7 @@
             </conditions>
             <actions>
                 <action id="-11" name="Subtract from" sid="784678989756975" type="System">
-                    <param id="0" name="Variable">globalTime</param>
+                    <param id="0" name="Variable">runner_timer</param>
                     <param id="1" name="Value">1</param>
                 </action>
             </actions>
@@ -93,23 +105,38 @@
         <event-block sid="974571829040982">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="414364698537024" type="System">
-                    <param id="0" name="Variable">globalTime</param>
+                    <param id="0" name="Variable">runner_timer</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="311795087152774" type="Timer">
-                    <param id="0" name="Text">&quot;RIP&quot;</param>
-                </action>
-                <action id="-9" name="Set value" sid="642645120137910" type="System">
-                    <param id="0" name="Variable">win</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-25" name="Go to layout (by name)" sid="230746770130943" type="System">
-                    <param id="0" name="Layout">&quot;rip&quot;</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="347456040336266">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="920244653241151" type="System">
+                            <param id="0" name="Variable">returnPoint</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;multi&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="267068645049150" type="System">
+                            <param id="0" name="Layout">playerLose</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="711018329145691">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="136852042736436" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="640937469603507" type="System">
+                            <param id="0" name="Layout">endSingle</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="333873374145474">
             <conditions>

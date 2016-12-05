@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>single</name>
+    <events>
+        <variable constant="0" name="return_lose" sid="102475498210685" static="0" type="text">endSingle</variable>
+        <variable constant="0" name="returnPoint" sid="472675977544282" static="0" type="text">single</variable>
+        <variable constant="0" name="globalWatch" sid="614329984695678" static="0" type="text"></variable>
+        <variable constant="0" name="playListIndex" sid="775080384884185" static="0" type="number">0</variable>
+        <variable comment="number of minigames that we have" constant="0" name="gamesAvaliable" sid="906108980861908" static="0" type="number">8</variable>
+        <variable constant="0" name="setUpGame" sid="987840851993406" static="0" type="number">1</variable>
+        <variable comment="nivel atual do jogo, tambem é usado como dificuldade" constant="0" name="level" sid="616862123820446" static="0" type="number">1</variable>
+        <variable comment="number of games in each level" constant="0" name="gamesPerLevel" sid="369467814166861" static="0" type="number">4</variable>
+        <variable constant="0" name="globalScore" sid="442174764122726" static="0" type="number">0</variable>
+        <variable constant="0" name="globalWin" sid="247556379131830" static="0" type="number">0</variable>
+        <variable constant="0" name="globalTime" sid="346132933716244" static="0" type="number">35</variable>
+        <event-block sid="844513951397359">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="595579766560919" type="System">
+                    <param id="0" name="Variable">setUpGame</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>cria playlist do primeiro nivel do jogo</comment>
+                <variable constant="0" name="randHelper" sid="365670408289532" static="0" type="number">0</variable>
+                <event-block sid="310393867749019">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="209863347710728" type="System">
+                            <param id="0" name="Count">gamesAvaliable</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Insert" sid="537189738440714" type="gamelist">
+                            <param id="0" name="Value">loopindex</param>
+                            <param id="1" name="Index">loopindex</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="567243919107035">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="458244816748984" type="System">
+                            <param id="0" name="Count">gamesPerLevel</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="760562876061478" type="System">
+                            <param id="0" name="Variable">randHelper</param>
+                            <param id="1" name="Value">int(random(gamelist.Width))</param>
+                        </action>
+                        <action id="10" name="Insert" sid="425664385568303" type="playlist">
+                            <param id="0" name="Value">gamelist.At(randHelper)</param>
+                            <param id="1" name="Index">loopindex</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="9" name="Delete" sid="655828978106721" type="gamelist">
+                            <param id="0" name="Index">randHelper</param>
+                            <param id="1" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="936849359364706">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="118564335595207" type="System">
+                            <param id="0" name="Variable">setUpGame</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="619858126723875" type="System">
+                            <param id="0" name="Variable">setUpGame</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="940596886081198" type="System">
+                            <param id="0" name="Variable">playListIndex</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="972892844378622">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="537233181601821" type="System">
+                    <param id="0" name="Variable">setUpGame</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="679713840055710">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="631328627675717" type="System">
+                            <param id="0" name="Variable">playListIndex</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">gamesPerLevel</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="929290573512174" type="System">
+                            <param id="0" name="Variable">playListIndex</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="763468876118182" type="System">
+                            <param id="0" name="Variable">globalWatch</param>
+                            <param id="1" name="Value">&quot;game&quot;&amp;playlist.At(playListIndex-1)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="982691312689348" type="System">
+                            <param id="0" name="Variable">globalScore</param>
+                            <param id="1" name="Value">100+50*level</param>
+                        </action>
+                        <action id="-25" name="Go to layout (by name)" sid="813418810470888" type="System">
+                            <param id="0" name="Layout">&quot;game&quot;&amp;playlist.At(playListIndex -1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="235344999792904">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="779415859517872" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="976821640337945" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="562282915311126" type="System">
+                            <param id="0" name="Variable">setUpGame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

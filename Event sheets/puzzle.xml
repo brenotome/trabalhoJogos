@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>puzzle</name>
+    <events>
+        <variable constant="0" name="quebracabeca_level" sid="626440664079822" static="0" type="number">10</variable>
+        <variable constant="0" name="quebracabeca_time" sid="295607776799190" static="0" type="number">15</variable>
+        <event-block sid="259265586087245">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="280826436792390" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="912881345711704" type="System">
+                    <param id="0" name="Variable">quebracabeca_level</param>
+                    <param id="1" name="Value">level</param>
+                </action>
+                <action id="-34" name="Set layer background color" sid="560125696517166" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Color">rgb(100, 100, 100)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="789761411697055">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="200819371141741" type="System">
+                            <param id="0" name="Variable">quebracabeca_level</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="232547740860257" type="System">
+                            <param id="0" name="Variable">quebracabeca_time</param>
+                            <param id="1" name="Value">15 - (2 * quebracabeca_level)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="291380005444257" type="tempo">
+                            <param id="0" name="Text">&quot;Time:&quot;&amp;quebracabeca_time</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="525813918576056">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="907440916661453" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="140441643344587" type="System">
+                            <param id="0" name="Variable">quebracabeca_level</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="279512758231068" type="System">
+                            <param id="0" name="Variable">quebracabeca_time</param>
+                            <param id="1" name="Value">15 - (2 * quebracabeca_level)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="237882819155456" type="tempo">
+                            <param id="0" name="Text">&quot;Time:&quot;&amp;quebracabeca_time</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="422339799713322">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="372620939633432" type="System">
+                    <param id="0" name="First value">bk1.X+(bk1.Width/2)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bk2.X-(bk2.Width/2)-10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="944716640446632" type="System">
+                    <param id="0" name="First value">bk1.X+(bk1.Width/2)</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bk2.X-(bk2.Width/2)+10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="742666988937413" type="System">
+                    <param id="0" name="First value">bk1.Y</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bk2.Y-10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="444110516156075" type="System">
+                    <param id="0" name="First value">bk1.Y</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bk2.Y+10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="879172305312030" type="System">
+                    <param id="0" name="First value">bk3.X+(bk3.Width/2)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bk4.X-(bk4.Width/2)-10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="387475850888854" type="System">
+                    <param id="0" name="First value">bk3.X+(bk3.Width/2)</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bk4.X-(bk4.Width/2)+10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="735294696821972" type="System">
+                    <param id="0" name="First value">bk3.Y</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bk4.Y-10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="103925366111558" type="System">
+                    <param id="0" name="First value">bk3.Y</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bk4.Y+10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="107830677715663" type="System">
+                    <param id="0" name="First value">bk1.Y+(bk1.Height/2)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bk3.Y-(bk3.Height/2)-10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="640128077473130" type="System">
+                    <param id="0" name="First value">bk1.Y+(bk1.Height/2)</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bk3.Y-(bk3.Height/2)+10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="280263189957319" type="System">
+                    <param id="0" name="First value">bk1.X</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">bk3.X+7-10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="339566673032176" type="System">
+                    <param id="0" name="First value">bk1.X</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">bk3.X+7+10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="969038875748221" type="System">
+                    <param id="0" name="Layout">returnPoint</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="712991921684979">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="800183123677012" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="323358655548418" type="System">
+                    <param id="0" name="Variable">quebracabeca_time</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="322264887785313" type="tempo">
+                    <param id="0" name="Text">&quot;Time:&quot;&amp;quebracabeca_time</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="324887976709292">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="810411994445071" type="System">
+                    <param id="0" name="Variable">quebracabeca_time</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="932111516540558" type="System">
+                    <param id="0" name="Layout">return_lose</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

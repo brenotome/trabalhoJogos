@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>playerLose</name>
+    <events>
+        <event-block sid="668943965539939">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="541508321953266" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set at XY" sid="858272681003644" type="playersAtivos">
+                    <param id="0" name="X">playListIndex-1</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">playersAtivos.At(playListIndex-1,1) - 100</param>
+                </action>
+                <action id="3" name="Set at XY" sid="474343526677807" type="playersRIP">
+                    <param id="0" name="X">playersAtivos.At(playListIndex-1)</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">playersAtivos.At(playListIndex-1,1)</param>
+                </action>
+                <action id="9" name="Delete" sid="741978831693614" type="playersAtivos">
+                    <param id="0" name="Index">playListIndex-1</param>
+                    <param id="1" name="Axis">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="279154523369246" type="System">
+                    <param id="0" name="Variable">playListIndex</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="398313818182930">
+            <conditions>
+                <condition id="14" name="On tap" sid="604185611775140" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="732680668230515" type="System">
+                    <param id="0" name="Layout">multi</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>game7</name>
+    <events>
+        <event-block sid="548050960673296">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="764845972165183" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="576593044728620" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="916917646501039" type="System">
+                    <param id="0" name="Layout">calculator</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

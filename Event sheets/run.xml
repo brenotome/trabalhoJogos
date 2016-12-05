@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>run</name>
+    <events>
+        <variable constant="0" name="RC_level" sid="173501476719973" static="0" type="number">1</variable>
+        <variable constant="0" name="RC_step" sid="840468584689665" static="0" type="number">0</variable>
+        <variable constant="0" name="RC_tempo" sid="188311826595485" static="0" type="number">20</variable>
+        <variable constant="0" name="RC_maxTouchs" sid="377027757414211" static="0" type="number">45</variable>
+        <variable comment="number of touchs" constant="0" name="RC_touchcount" sid="286584007597553" static="0" type="number">0</variable>
+        <event-block sid="222178835197528">
+            <conditions>
+                <condition id="14" name="On tap" sid="239209473125377" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="531746845303457" type="System">
+                    <param id="0" name="Variable">RC_touchcount</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="187843447403487" type="System">
+                    <param id="0" name="Variable">RC_step</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="436970749447559">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="808804855431474" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="215677901717666" type="touchs">
+                    <param id="0" name="Text">&quot;Touchs:&quot;&amp;RC_touchcount</param>
+                </action>
+                <action id="3" name="Set progress" sid="487037623277637" type="ProgressBar">
+                    <param id="0" name="Value">RC_touchcount</param>
+                </action>
+                <action id="0" name="Set text" sid="816096071649241" type="Timer">
+                    <param id="0" name="Text">&quot;Time:&quot;&amp;RC_tempo</param>
+                </action>
+                <action id="-23" name="Move at angle" sid="635545487595038" type="background">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">RC_step</param>
+                </action>
+                <action id="-23" name="Move at angle" sid="622751665727896" type="marcadorDeLayout">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">RC_step</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="530244751300490">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="904253105359078" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="721297909443272" type="System">
+                    <param id="0" name="Variable">RC_level</param>
+                    <param id="1" name="Value">level</param>
+                </action>
+                <action id="4" name="Set maximum" sid="120810840905815" type="ProgressBar">
+                    <param id="0" name="Maximum">RC_maxTouchs</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="861284167890676">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="393052258606584" type="System">
+                            <param id="0" name="Variable">RC_level</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="208224190942817" type="System">
+                            <param id="0" name="Variable">RC_tempo</param>
+                            <param id="1" name="Value">20 - RC_level</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="740652108694792">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="846347429722021" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="508014971659148" type="System">
+                            <param id="0" name="Variable">RC_level</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="215459624713105" type="System">
+                            <param id="0" name="Variable">RC_tempo</param>
+                            <param id="1" name="Value">20 - RC_level</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>win</comment>
+        <event-block sid="827116779141089">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="237492930578985" type="System">
+                    <param id="0" name="Variable">RC_touchcount</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">RC_maxTouchs</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="681935542922208" type="System">
+                    <param id="0" name="Variable">RC_tempo</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Set value" sid="674891225165298" type="System">
+                    <param id="0" name="Variable">RC_touchcount</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="417575623947600" type="System">
+                    <param id="0" name="Variable">RC_step</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="337555555478445" type="System">
+                    <param id="0" name="Layout">returnPoint</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="578115378481139">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="880036363355901" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="878494269044871" type="System">
+                    <param id="0" name="Variable">RC_tempo</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>lose</comment>
+        <event-block sid="450117773877773">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="166793053504655" type="System">
+                    <param id="0" name="Variable">RC_tempo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="400668958155875" type="System">
+                    <param id="0" name="Variable">RC_tempo</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Set value" sid="791536077308838" type="System">
+                    <param id="0" name="Variable">RC_touchcount</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="438432128545716" type="System">
+                    <param id="0" name="Variable">RC_step</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="474755971072458" type="System">
+                    <param id="0" name="Layout">return_lose</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="365500331874919">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="992219292017728" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="923980017957705" type="System">
+                    <param id="0" name="Variable">RC_step</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="630407606123620" type="System">
+                    <param id="0" name="Variable">RC_step</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="750384912696907">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="722905045920110" type="System">
+                    <param id="0" name="Variable">RC_step</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="427113838657315" type="scott">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="362100128482809">
+            <conditions>
+                <condition id="-22" name="Else" sid="196972169225432" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="992847981854616" type="scott">
+                    <param id="0" name="Animation">&quot;stand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="797561093668041">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="852192854939099" type="marcadorDeLayout">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-2050</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="188325818841086" type="System">
+                    <param id="0" name="Object to create">background</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">825</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-25" name="Move to bottom" sid="489593391239028" type="background" />
+                <action id="-9" name="Destroy" sid="623694926641108" type="marcadorDeLayout" />
+                <action id="-3" name="Create object" sid="532263278632275" type="System">
+                    <param id="0" name="Object to create">marcadorDeLayout</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">825</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

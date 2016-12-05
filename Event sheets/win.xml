@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>win</name>
+    <events>
+        <event-block sid="867975868404190">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="632480337374249" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set at XY" sid="117934025845264" type="playersRIP">
+                    <param id="0" name="X">playersAtivos.At(playListIndex-1)</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">playersAtivos.At(playListIndex-1,1)</param>
+                </action>
+                <action id="0" name="Set text" sid="981383517143231" type="victory">
+                    <param id="0" name="Text">&quot;O Vencedor é : PLAYER&quot; &amp; playersAtivos.At(0,0)+1</param>
+                </action>
+                <action id="0" name="Set text" sid="789822965535164" type="multiScore">
+                    <param id="0" name="Text">&quot;Score:&quot; &amp; playersAtivos.At(0,1)</param>
+                </action>
+                <action id="0" name="Set text" sid="590750902612695" type="p1score">
+                    <param id="0" name="Text">&quot;player1:&quot;&amp;playersRIP.At(0)</param>
+                </action>
+                <action id="0" name="Set text" sid="333373992418450" type="p2score">
+                    <param id="0" name="Text">&quot;player2:&quot;&amp;playersRIP.At(1)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="208963162531130">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="213857991535379" type="System">
+                            <param id="0" name="Variable">players</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="536548129000676" type="p3score">
+                            <param id="0" name="Text">&quot;player3:&quot;&amp; playersRIP.At(2)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="138722657577604">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="538573532379804" type="System">
+                                    <param id="0" name="Variable">players</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="766241240536196" type="p4score">
+                                    <param id="0" name="Text">&quot;player4:&quot;&amp;playersRIP.At(3)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="346655055569565">
+            <conditions>
+                <condition id="15" name="On double-tap" sid="858184703205864" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="281342078756916" type="Audio" />
+                <action id="-21" name="Reset global variables" sid="973774996276299" type="System" />
+                <action id="-45" name="Reset persisted objects" sid="423785493665520" type="System" />
+                <action id="-2" name="Go to layout" sid="934872062194475" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

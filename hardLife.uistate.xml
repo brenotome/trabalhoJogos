@@ -10,16 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="3">Menu</layout>
-        <layout order="6">avoidFbWp</layout>
-        <layout order="7">rip</layout>
-        <layout order="9">clickBooks</layout>
-        <event-sheet order="0">game</event-sheet>
-        <event-sheet order="1">Menu</event-sheet>
-        <event-sheet order="2">runToTheClass</event-sheet>
-        <event-sheet order="4">clickBooks</event-sheet>
-        <event-sheet order="5">avoidFbWp</event-sheet>
-        <event-sheet order="8">rip</event-sheet>
+        <layout active="1" order="0">Menu</layout>
+        <event-sheet order="1">single</event-sheet>
+        <event-sheet order="2">calculator</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -31,7 +24,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="0" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="layout-folder/intros/" />
+        <folder expanded="1" path="layout-folder/games/" />
+        <folder expanded="0" path="layout-folder/splashs/" />
         <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/intro/" />
+        <folder expanded="1" path="event-folder/games/" />
+        <folder expanded="1" path="event-folder/splash/" />
         <folder expanded="0" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
@@ -46,5 +45,46 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/fb/" />
         <folder expanded="1" path="animation-folder/Sprite/" />
         <folder expanded="1" path="animation-folder/target/" />
+        <folder expanded="1" path="animation-folder/btn_single/" />
+        <folder expanded="1" path="animation-folder/btn_multiplayer/" />
+        <folder expanded="1" path="animation-folder/2players/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/3players/" />
+        <folder expanded="1" path="animation-folder/4players/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Faster/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/fail/" />
+        <folder expanded="1" path="animation-folder/ready/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/Sprite6/" />
+        <folder expanded="1" path="animation-folder/A/" />
+        <folder expanded="1" path="animation-folder/B/" />
+        <folder expanded="1" path="animation-folder/X/" />
+        <folder expanded="1" path="animation-folder/Y/" />
+        <folder expanded="1" path="animation-folder/Ramona/" />
+        <folder expanded="1" path="animation-folder/Command/" />
+        <folder expanded="1" path="animation-folder/monkey_Scott/" />
+        <folder expanded="1" path="animation-folder/Back/" />
+        <folder expanded="1" path="animation-folder/BlackBoard/" />
+        <folder expanded="1" path="animation-folder/dontTouch/" />
+        <folder expanded="1" path="animation-folder/dont_BlackBoard/" />
+        <folder expanded="1" path="animation-folder/run_BlackBoard/" />
+        <folder expanded="1" path="animation-folder/AD_BlackBoard/" />
+        <folder expanded="1" path="animation-folder/cb_BlackBoard/" />
+        <folder expanded="1" path="animation-folder/f2u__classroom_background_by_lo_amd85jdwi/" />
+        <folder expanded="1" path="animation-folder/ai_scott/" />
+        <folder expanded="1" path="animation-folder/bus/" />
+        <folder expanded="1" path="animation-folder/busstop/" />
+        <folder expanded="1" path="animation-folder/ai_BlackBoard/" />
+        <folder expanded="1" path="animation-folder/pz_BlackBoard/" />
+        <folder expanded="1" path="animation-folder/bk1/" />
+        <folder expanded="1" path="animation-folder/ChalkboardFundo/" />
+        <folder expanded="1" path="animation-folder/bk4/" />
+        <folder expanded="1" path="animation-folder/bk3/" />
+        <folder expanded="1" path="animation-folder/bk2/" />
+        <folder expanded="1" path="animation-folder/calc_BlackBoard/" />
+        <folder expanded="1" path="animation-folder/calc_ChalkboardFundo/" />
+        <folder expanded="1" path="animation-folder/calculadora/" />
     </folders-expanded>
 </c2uistate>
